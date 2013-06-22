@@ -21,8 +21,8 @@ def getImage(feed_url):
 		break
 	image_content = None
 	if(img != None):
-		src=img["src"]
-		if(src.startswith("//"))
+		src=str(img["src"])
+		if(src.startswith("//")):
 			src="http:"+src
 		image_remote=urlfetch.fetch(src)
 		if(image_remote.status_code!=200):
