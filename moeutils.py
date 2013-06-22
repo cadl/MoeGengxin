@@ -21,7 +21,10 @@ def getImage(feed_url):
 		break
 	image_content = None
 	if(img != None):
-		image_remote=urlfetch.fetch(img["src"] )
+		src=img["src"]
+		if(src.startswith("//"))
+			src="http:"+src
+		image_remote=urlfetch.fetch(src)
 		if(image_remote.status_code!=200):
 			return None
 		image_content = image_remote.content
