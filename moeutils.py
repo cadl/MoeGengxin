@@ -41,6 +41,7 @@ def schedule():
 
 	image = getImage(feed.link)
 	
+        logging.info("title: %s, link: %s, length: %s", feed.title, feed.link, len(image or "1"))
 	if(moeweibo.sendBySina(feed.title, feed.link, image)):
 		msg += "Sina: Success<br/>"
 	else:
